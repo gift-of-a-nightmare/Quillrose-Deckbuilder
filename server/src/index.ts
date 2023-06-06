@@ -4,9 +4,11 @@ import dotenv from 'dotenv';
 // SERVICES
 import { CardService } from '../../shared/services/cardService';
 
+// IMPLEMENTATION
+import CardServiceLocal from '../serviceImplementations/local/CardServiceLocal'
+
 // ROUTERS
 import CardRouter from '../routes/cards'
-import CardServiceLocal from '../serviceImplementations/local/CardServiceLocal'
 
 const app: Express = express();
 

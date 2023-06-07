@@ -41,5 +41,6 @@ jspm_packages
 public/
 server/build
 build
+shared/**/*.js
 
 .env

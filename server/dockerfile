@@ -1,0 +1,13 @@
+# Node version
+FROM node:lts-buster
+
+# Server work directory
+WORKDIR /server
+
+# Setting up environment
+COPY package*.json ./
+RUN npm install
+EXPOSE 3000
+
+# Launching
+CMD ["npm", "run", "start"]

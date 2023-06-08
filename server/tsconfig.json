@@ -9,11 +9,18 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "~shared/*": ["../shared/*"]
+      "~shared/*": [
+        "../shared/*"
+      ]
     },
     "rootDirs": [
       "./src",
       "../shared"
+    ]
+  },
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
     ]
   }
 }

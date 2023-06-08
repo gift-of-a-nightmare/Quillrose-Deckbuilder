@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "nodemonConfig": {
-    "ignore":
-      [
-        "**/*.test.ts",
-        "**/*.spec.ts",
-        ".git",
-        "node_modules"
-      ],
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
     "watch": [
       "src"
     ],
@@ -20,8 +19,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "npx nodemon",
-    "build": "rimraf ./build && tsc --outdir ./build",
-    "start": "npm run build && ts-node -r ./tsconfig-paths-bootstrap.js ./build/server/src/index.js"
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node -r tsconfig-paths/register -r ts-node/register ./build/server/src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -40,5 +39,4 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.4"
   }
-  
 }

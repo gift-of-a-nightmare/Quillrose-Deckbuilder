@@ -1,9 +1,10 @@
 import React from "react";
+import { HomeWrapper } from "./HomeWrapper";
 
 export const Home : React.FC = () => {
     return(
         <div>
-            <h1>Hello world, from Home.</h1>
+            <HomeWrapper/>
         </div>
     )
 }

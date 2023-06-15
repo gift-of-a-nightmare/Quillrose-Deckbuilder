@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import { CardService } from '~shared/services/cardService';
 
 // IMPLEMENTATION
-import CardServiceLocal from './services/local/CardServiceLocal';
+import { CRUDCardServiceLocal } from './services/local/CRUDCardService';
 
 // ROUTERS
 import CardRouter from './routes/cards'
@@ -17,9 +17,7 @@ dotenv.config();
 const port = process.env.PORT_NODE;
 
 // DETERMINE DEPENDENCY
-const cardService: CardService = new CardServiceLocal();
-
-app.use('/cards', CardRouter(cardService));
+app.use('/cards', CardRouter(CRUDCardServiceLocal));
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Typescript NodeJS + Express Server');

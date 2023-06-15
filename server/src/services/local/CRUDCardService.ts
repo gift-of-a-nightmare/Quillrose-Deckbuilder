@@ -3,7 +3,7 @@ import { Card } from "~shared/core/card";
 import { cards } from "./db";
 
 // Implement the CRUDService for Card
-export const CRUDCardServiceLocal: CRUDService<Card> = {
+export const CRUDCardService: CRUDService<Card> = {
     getAll: async () => {
         return cards;
     },

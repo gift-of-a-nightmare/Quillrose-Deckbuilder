@@ -1,4 +1,5 @@
 import { Card, Rarity } from "~shared/core/card";
+import { User, Role  } from "~shared/core/user"
 
 // Mock database for front-end development purposes.
 export const cards: Card[] = [
@@ -31,5 +32,32 @@ export const cards: Card[] = [
     textFlavour: "Flavour Text",
     cardSymbols: ["symbol2"],
     cardId: "card2"
+  }
+];
+
+export const users: User[] = [
+  {
+    userId: "1",
+    username: "user1",
+    password: "password1",
+    email: "user1@example.com",
+    roles: [Role.PLAYER],
+    decks: []
+  },
+  {
+    userId: "2",
+    username: "user2",
+    password: "password2",
+    email: "user2@example.com",
+    roles: [Role.PLAYER],
+    decks: []
+  },
+  {
+    userId: "3",
+    username: "admin",
+    password: "adminpassword",
+    email: "admin@example.com",
+    roles: [Role.PLAYER, Role.ADMINISTRATOR],
+    decks: []
   }
 ];

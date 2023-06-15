@@ -1,11 +1,12 @@
 import { Deck } from "./deck";
 
-enum Role {
+export enum Role {
     PLAYER = 'player',
     ADMINISTRATOR = 'administrator'
 }
 
 export interface User {
+    userId: string;
     username: string;
     password: string;
     email: string;

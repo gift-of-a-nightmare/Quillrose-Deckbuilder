@@ -2,19 +2,19 @@ import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 
 // SERVICES
-import { CardService } from '../../shared/services/cardService';
+import { CardService } from '~shared/services/cardService';
 
 // IMPLEMENTATION
-import CardServiceLocal from '../serviceImplementations/local/CardServiceLocal'
+import CardServiceLocal from './services/local/CardServiceLocal';
 
 // ROUTERS
-import CardRouter from '../routes/cards'
+import CardRouter from './routes/cards'
 
 const app: Express = express();
 
 // ENV
 dotenv.config();
-const port = process.env.PORT;
+const port = process.env.PORT_NODE;
 
 // DETERMINE DEPENDENCY
 const cardService: CardService = new CardServiceLocal();

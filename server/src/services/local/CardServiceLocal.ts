@@ -1,5 +1,5 @@
-import { CardService } from "../../../shared/services/cardService";
-import { Card, Rarity } from "../../../shared/core/card";
+import { CardService } from "~shared/services/cardService";
+import { Card, Rarity } from "~shared/core/card";
 
 class CardServiceLocal implements CardService {
     private cards: Card[] = [];

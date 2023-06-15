@@ -42,5 +42,6 @@ public/
 shared/**/*.js
 server/build
 build
+shared/**/*.js
 
 .env

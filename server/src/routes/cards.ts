@@ -1,5 +1,5 @@
 import express, { Request, Response, Router } from 'express';
-import { CardService } from '../../shared/services/cardService';
+import { CardService } from '~shared/services/cardService';
 
 function cardRouter(cardService: CardService): Router {
     const router: Router = Router();

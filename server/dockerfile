@@ -1,13 +1,35 @@
-# Node version
-FROM node:lts-buster
+FROM node as builder
 
-# Server work directory
-WORKDIR /server
+# Create app directory
+WORKDIR /app
 
-# Setting up environment
-COPY package*.json ./
-RUN npm install
+# Install app dependencies
+COPY ./server/package*.json .
+RUN npm install\
+        && npm install typescript -g
+
+ADD ../shared .
+COPY . .
+
+RUN npm run build
+
+FROM node:slim
+
+ENV NODE_ENV production
+
+# Create app directory
+WORKDIR /app
+
+# Install app dependencies
+ADD ../shared /app
+COPY ./server/package*.json .
+RUN npm install --production\
+        && npm install typescript -g
+COPY --from=builder /usr/src/app/dist ./dist
+
+USER node
 EXPOSE 3000
+CMD [ "node", "dist/server/index.js" ]
 
-# Launching
-CMD ["npm", "run", "start"]
+### Run from parent directory
+### docker build -t nodejs-server -f ./server/dockerfile .

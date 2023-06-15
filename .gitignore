@@ -39,6 +39,7 @@ jspm_packages
 
 #Excluding build directory
 public/
+shared/**/*.js
 server/build
 build
 

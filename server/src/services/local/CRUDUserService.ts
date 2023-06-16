@@ -1,9 +1,10 @@
 import { CRUDService } from "~shared/services/crudService";
 import { User } from "~shared/core/user"
 import { users }  from "./db";
+import { UserService } from "../userService";
 
 // Implement the CRUDService for Card
-export const CRUDUserService: CRUDService<User> = {
+export const CRUDUserService: UserService = {
     getAll: async () => {
         return users;
     },

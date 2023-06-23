@@ -7,7 +7,9 @@ export const AllCardsResult : React.FC = () => {
     const [fetching, setFetching] = useState(true);
 
     useEffect(() => {
-        fetchData();
+        if(fetching){
+            fetchData();
+        }
       }, []);
 
     const fetchData = async () => {

@@ -1,3 +1,20 @@
-.body {
-    background-color: red;
+.commandbar-body{
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.commandbar-grid-container {
+    display: grid;
+    grid-template-columns: 5fr 14fr 5fr;
+}
+
+.commandbar-grid-item{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.commandbar-options {
+    padding-top: 2%;
 }
